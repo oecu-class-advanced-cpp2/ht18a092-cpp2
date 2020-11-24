@@ -12,10 +12,15 @@
 */
 /* -------------------------------------------------------------- */
 bool is_prime(int num){
+    if ( num ==1 ) return false;
+    for(int i=2; i<=num-1; i++){
+        return false;
+    } 
+        return true;
 
 }
 int nth_prime(unsigned int a, unsigned int d, unsigned int n){
-     int num =a;
+     int num = a;
  while(num <=CPP2_PRIME_UPPER_LIMIT){
      std::cout << num << std::endl;
      num += d;
