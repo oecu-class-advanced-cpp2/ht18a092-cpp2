@@ -13,23 +13,43 @@
 /* -------------------------------------------------------------- */
 bool is_prime(int num){
     if ( num ==1 ) return false;
+
     for(int i=2; i<=num-1; i++){
-        if(n%i==0)
-        return false;
+
+        if(n%i==0){
+
+            return false;
+
+        }
     } 
         return true;
 }
 int nth_prime(unsigned int a, unsigned int d, unsigned int n){
-     int num = a;
+     int curtent = 0;
+     int num = 0;
  while(num <=CPP2_PRIME_UPPER_LIMIT){
-     std::cout << num << std::endl;
-     num += d;
+     if(is_prime(curtent)){
+         
+         num++;
+         
+         if(num==n){
+
+             return curtent;
+         }
+
+         curtent +=d;
+     }
  }
  return(-1);
 }
 
 int main() {
  
- nth_prime(367, 186, 151);
+ std::cout<< nth_prime(367, 186, 151);
+ std::cout<< nth_prime(11,31,42);
+ std::cout<< nth_prime(43,53,95);
+ std::cout<< nth_prime(12,10,5);
+
+ 
 return 0;
 }
