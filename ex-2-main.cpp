@@ -130,6 +130,6 @@ int main(){
 
   cpp2::mcxi a9("9m8c7xi");
   cpp2::mcxi b9("c2x8i");
-  auto result9 = a9 + b9;
+  auto result9 = a9 + c9;
   std::cout << "9m9c9x9i" << " " << result9.to_string() << std::endl;
 }
