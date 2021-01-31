@@ -73,7 +73,14 @@ private:
          */
         /* ----------------------------------------------------------------- */
         int unit(char c) {
-
+            switch(c){
+            case 'm': return 1000;
+            case 'c': return 100;
+            case 'x': return 10;
+            case 'i': return 1;
+            default:
+            break;
+            }
         }
 
 
