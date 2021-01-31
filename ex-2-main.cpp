@@ -62,19 +62,45 @@ namespace cpp2 {
          */
         /* ----------------------------------------------------------------- */
         std::string to_string() const {
+            
             std::stringstream ss;
         
-        int value_ = 2000;
-        
-        int q = value_/1000;
-        
-        if (q == 1){
+        int m = value_/1000;
+        if (m == 1){
                 ss << 'm';
         }
-        if (q > 1){
+        if (m > 1){
                 ss << q;
                 ss << 'm';
-  }  
+        } 
+        
+        int c = value_/100;
+        if (c == 1){
+                ss << 'c';
+        }
+        if (c > 1){
+                ss << c;
+                ss << 'c';
+        }  
+        
+        int x = value_/10;
+        if (x == 1){
+                ss << 'x';
+        }
+        if (x > 1){
+                ss << x;
+                ss << 'x';
+        }  
+        
+        int i = value_/1;
+        if (i == 1){
+                ss << 'i';
+        }
+        if (i > 1){
+                ss << i;
+                ss << 'i';
+        }  
+
   
   std::cout << ss.str() << std::endl;
         }
