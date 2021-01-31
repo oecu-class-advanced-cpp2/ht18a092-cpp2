@@ -49,7 +49,9 @@ namespace cpp2 {
          */
         /* ----------------------------------------------------------------- */
         mcxi operator+(const mcxi& rhs) {
-
+            mcxi dest(*this);
+            dest.value_ +=rhs.value_;
+            return dest;
         }
 
         /* ----------------------------------------------------------------- */
@@ -60,7 +62,21 @@ namespace cpp2 {
          */
         /* ----------------------------------------------------------------- */
         std::string to_string() const {
-
+            std::stringstream ss;
+        
+        int value_ = 2000;
+        
+        int q = value_/1000;
+        
+        if (q == 1){
+                ss << 'm';
+        }
+        if (q > 1){
+                ss << q;
+                ss << 'm';
+  }  
+  
+  std::cout << ss.str() << std::endl;
         }
 
 private:
