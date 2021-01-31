@@ -67,16 +67,17 @@ namespace cpp2 {
             
             std::stringstream ss;
         
-        int m = value_/1000;
+        int m = value_ / 1000;
         if (m == 1){
                 ss << 'm';
         }
         if (m > 1){
-                ss << q;
+                ss << m;
                 ss << 'm';
         } 
         
-        int c = value_/100;
+        int c = value_ % 1000;
+        c = c / 100; 
         if (c == 1){
                 ss << 'c';
         }
@@ -85,7 +86,8 @@ namespace cpp2 {
                 ss << 'c';
         }  
         
-        int x = value_/10;
+        int x = value_ % 100;
+        x = x / 10;
         if (x == 1){
                 ss << 'x';
         }
@@ -94,12 +96,13 @@ namespace cpp2 {
                 ss << 'x';
         }  
         
-        int i = value_/1;
-        if (i == 1){
+        int i = value_ % 10;
+        i = i / 1;
+        if (m == 1){
                 ss << 'i';
         }
-        if (i > 1){
-                ss << i;
+        if (m > 1){
+                ss << m;
                 ss << 'i';
         }  
 
